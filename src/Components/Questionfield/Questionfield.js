@@ -1,13 +1,14 @@
 // import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { EyeIcon } from '@heroicons/react/24/solid'
+import { useState } from 'react';
 
 
 
 const Questionfield = ({ mcq }) => {
     // console.log(mcq)
 
-
+    const [toggle, setToggle] = useState(true);
 
 
     const { question, options, correctAnswer } = mcq
@@ -19,8 +20,16 @@ const Questionfield = ({ mcq }) => {
 
                 <div className="card-body items-center text-center">
 
+                    <div>
+                        {toggle || <h1>correct Ans:{correctAnswer} </h1>}
+                        <button
+                            onClick={() => setToggle(!toggle)}> <EyeIcon
 
-                    <h2 className="card-title text-blue-700 py-4"> Question:{question}</h2>
+                                className="h-8 w-8 " />
+                        </button>
+                    </div>
+                    <div> <h2 className="card-title text-blue-700 py-4"> Question:{question}</h2></div>
+
                     <div className='flex'>
 
                         <div>
@@ -35,8 +44,9 @@ const Questionfield = ({ mcq }) => {
                             </ol>
                         </div>
 
-                        <div className='ml-10'>
-                            <EyeIcon className="h-12 w-12 m-3 text-black" /><h1 className=' hidden'>correct Ans:{correctAnswer} </h1></div>
+
+
+
                     </div>
 
 
