@@ -5,20 +5,24 @@ import Frontpage from '../Frontpage/Frontpage';
 import Questioninformation from '../Questioninform/Questioninformation';
 
 
+
 const Home = () => {
     const questionpatern = useLoaderData();
     const card = questionpatern.data;
     console.log(card)
     return (
-        <div>
+        <div className='bg-blue-200'>
 
-            <Frontpage></Frontpage>
-            <div className='grid md:grid-cols-2 lg:grid-cols-3'>
+            <div className=''>
+                <Frontpage></Frontpage>
+            </div>
+            <div className='grid  lg:grid-cols-2'>
                 {
                     card.map(card => <Questioninformation
                         key={card.id}
                         card={card}></Questioninformation>)
                 }
+
             </div>
         </div>
     );

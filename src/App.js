@@ -2,16 +2,21 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './Components/Blog/Blog';
+// import Errorpage from './Components/Errorpage/Errorpage';
 
 import Home from './Components/Home/Home';
 
 
+
 import Statiostics from './Components/Statistics/Statistics';
 import Topics from './Components/Topics/Topics';
+import Mcqfield from './Components/Mcqfield/Mcqfield';
 import Main from './Layout/Main';
 const router = createBrowserRouter([
   {
-    path: '/', element: <Main></Main>, children: [
+    path: '/', element: <Main></Main>,
+    // errorElement: <Errorpage></Errorpage>,
+    children: [
       {
         path: '/',
         loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
@@ -24,8 +29,25 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
 
-      { path: '/topics', element: <Topics></Topics> },
-      { path: '/statistics', element: <Statiostics></Statiostics> },
+      {
+        path: '/Topics',
+        element: <Topics></Topics>
+      },
+      {
+        path: '/Topics/:Topicsid',
+        loader: async ({ params }) => {
+          // console.log(params.Topicsid);
+          return fetch(` https://openapi.programming-hero.com/api/quiz/${params.Topicsid}`)
+        },
+        element: <Mcqfield></Mcqfield>
+      },
+      {
+        path: '/statistics',
+
+        element: <Statiostics></Statiostics>
+      },
+
+
       { path: '/blog', element: <Blog></Blog> },
 
 
