@@ -6,18 +6,9 @@ import { EyeIcon } from '@heroicons/react/24/solid'
 
 const Questionfield = ({ mcq }) => {
     // console.log(mcq)
-    const result = mcq.correctAnswer;
 
-    const handleclick = () => {
 
-        if (handleclick === result) {
-            alert('correct')
-        }
-        else {
-            alert('wrong')
-        }
-        // console.log(result);
-    }
+
 
     const { question, options, correctAnswer } = mcq
     return (
@@ -38,17 +29,14 @@ const Questionfield = ({ mcq }) => {
                                 {options.map(option => (
 
                                     <li className='text-2xl text-black bg-slate-200 w-80 pb-4 mx-auto ' key={option}>
-                                        <input onClick={() =>
-                                            handleclick()
-
-                                        } type="checkbox" class="  gap-3 checked:bg-black ..." />
+                                        <input type="checkbox" class="w-12 h-8 checked:bg-black ..." />
                                         {option}</li>
                                 ))}
                             </ol>
                         </div>
 
                         <div className='ml-10'>
-                            <EyeIcon className="h-6 w-6 m-3 text-black" /><h1 className=' hidden'>correct Ans:{correctAnswer} </h1></div>
+                            <EyeIcon className="h-12 w-12 m-3 text-black" /><h1 className=' hidden'>correct Ans:{correctAnswer} </h1></div>
                     </div>
 
 
