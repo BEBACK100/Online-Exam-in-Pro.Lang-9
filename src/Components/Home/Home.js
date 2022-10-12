@@ -9,7 +9,7 @@ import Questioninformation from '../Questioninform/Questioninformation';
 const Home = () => {
     const questionpatern = useLoaderData();
     const card = questionpatern.data;
-    console.log(card)
+    // console.log(card)
     return (
         <div className='bg-blue-200'>
 

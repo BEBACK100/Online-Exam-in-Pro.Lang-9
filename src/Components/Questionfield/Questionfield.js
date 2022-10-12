@@ -1,13 +1,27 @@
-import React from 'react';
+// import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { EyeIcon } from '@heroicons/react/24/solid'
 
 
+
 const Questionfield = ({ mcq }) => {
     // console.log(mcq)
+    const result = mcq.correctAnswer;
+
+    const handleclick = () => {
+
+        if (handleclick === result) {
+            alert('correct')
+        }
+        else {
+            alert('wrong')
+        }
+        // console.log(result);
+    }
 
     const { question, options, correctAnswer } = mcq
     return (
+
         <div className=''>
 
             <div className="card   bg-blue-200 mt-10 ">
@@ -24,7 +38,10 @@ const Questionfield = ({ mcq }) => {
                                 {options.map(option => (
 
                                     <li className='text-2xl text-black bg-slate-200 w-80 pb-4 mx-auto ' key={option}>
-                                        <input type="checkbox" class=" checked:bg-black ..." />
+                                        <input onClick={() =>
+                                            handleclick()
+
+                                        } type="checkbox" class="  gap-3 checked:bg-black ..." />
                                         {option}</li>
                                 ))}
                             </ol>

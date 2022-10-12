@@ -12,10 +12,11 @@ import Statiostics from './Components/Statistics/Statistics';
 import Topics from './Components/Topics/Topics';
 import Mcqfield from './Components/Mcqfield/Mcqfield';
 import Main from './Layout/Main';
+import Errorpage from './Components/Errorpage/Errorpage';
 const router = createBrowserRouter([
   {
     path: '/', element: <Main></Main>,
-    // errorElement: <Errorpage></Errorpage>,
+    errorElement: <Errorpage></Errorpage>,
     children: [
       {
         path: '/',
