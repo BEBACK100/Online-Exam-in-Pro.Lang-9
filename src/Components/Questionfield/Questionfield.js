@@ -7,14 +7,29 @@ import { useState } from 'react';
 
 const Questionfield = ({ mcq }) => {
     // console.log(mcq)
-
+    const result = mcq.correctAnswer;
+    // console.log(result);
     const [toggle, setToggle] = useState(true);
-
+    const [ans, setAns] = useState(true);
+    const handleclick = () => {
+        console.log(result)
+        if (correctAnswer === ans) {
+            alert('Right')
+        }
+        else {
+            alert('worng')
+        }
+        setAns(result);
+    }
 
     const { question, options, correctAnswer } = mcq
     return (
 
+
         <div className=''>
+            {
+
+            }
 
             <div className="card   bg-blue-200 mt-10 ">
 
@@ -38,7 +53,7 @@ const Questionfield = ({ mcq }) => {
                                 {options.map(option => (
 
                                     <li className='text-2xl text-black bg-slate-200 w-80 pb-4 mx-auto ' key={option}>
-                                        <input type="checkbox" class="w-12 h-8 checked:bg-black ..." />
+                                        <input onClick={() => handleclick(ans)} type="checkbox" class="w-12 h-8 checked:bg-black ..." />
                                         {option}</li>
                                 ))}
                             </ol>

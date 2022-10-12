@@ -13,7 +13,7 @@ const Frontpage = () => {
                     <p>This is the Best Online <br /> <span className='text-3xl font-bold text-blue-500'>Programming Language</span> Learning platform <br /> if you want to learn more please <br /> <span className='text-black'>See and Click the below </span><br /></p>
 
                 </div>
-                {/* <div> <Link className='bg-yellow-400 rounded-xl p-2 mt-4 text-3xl' to='/card'>{`Question field`}</Link></div> */}
+
 
             </div>
         </div>

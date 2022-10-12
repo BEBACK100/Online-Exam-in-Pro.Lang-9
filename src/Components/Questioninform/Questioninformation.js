@@ -5,7 +5,7 @@ const Questioninformation = ({ card }) => {
     // console.log(card)
     const { logo, name, id, total } = card;
     return (
-        <div className='  w-50 mx-auto bg-slate-400 gap-10 mt-8 pt-5 rounded-xl'>
+        <div className='  w-50 mx-auto bg-slate-400 gap-10 mt-8 py-5 rounded-xl'>
             <div>
                 <h2 className="card-title text-4xl justify-center text-blue-800 my-4">Name:{name}</h2>
                 <figure>  <img src={logo ? logo : logo} alt="" /></figure>
